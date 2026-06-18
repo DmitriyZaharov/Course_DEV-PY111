@@ -3,18 +3,18 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 263
-        length: 37
+      - offset: 288
+        length: 0
         placeholder_text: "...  # TODO реализовать операцию push"
         initial_state:
           length: 37
           offset: 263
         initialized_from_dependency: false
         encrypted_possible_answer: self._stack.append(elem)
-        selected: false
-        status: Unchecked
-      - offset: 514
-        length: 36
+        selected: true
+        status: Solved
+      - offset: 608
+        length: 0
         placeholder_text: "...  # TODO реализовать операцию pop"
         initial_state:
           length: 36
@@ -25,10 +25,10 @@ files:
                       raise IndexError("Извлечение из пустого стека не возможно")
           
                   return self._stack.pop()
-        selected: false
-        status: Unchecked
-      - offset: 1022
-        length: 37
+        selected: true
+        status: Solved
+      - offset: 1207
+        length: 163
         placeholder_text: "...  # TODO реализовать операцию peek"
         initial_state:
           length: 37
@@ -43,28 +43,28 @@ files:
           
                   inv_ind = -1 - ind
                   return self._stack[inv_ind]
-        selected: false
-        status: Unchecked
-      - offset: 1129
-        length: 38
+        selected: true
+        status: Solved
+      - offset: 1432
+        length: 27
         placeholder_text: "...  # TODO реализовать операцию clear"
         initial_state:
           length: 38
           offset: 1129
         initialized_from_dependency: false
         encrypted_possible_answer: self._stack.clear()
-        selected: false
-        status: Unchecked
-      - offset: 1253
-        length: 40
+        selected: true
+        status: Solved
+      - offset: 1569
+        length: 0
         placeholder_text: "...  # TODO реализовать операцию __len__"
         initial_state:
           length: 40
           offset: 1253
         initialized_from_dependency: false
         encrypted_possible_answer: return len(self._stack)
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -75,5 +75,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 18 Jun 2026 08:56:52 UTC"
 record: -1

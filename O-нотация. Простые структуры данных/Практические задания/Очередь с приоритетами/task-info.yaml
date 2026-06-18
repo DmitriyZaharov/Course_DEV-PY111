@@ -4,7 +4,7 @@ files:
     visible: true
     placeholders:
       - offset: 258
-        length: 68
+        length: 146
         placeholder_text: "...  # TODO использовать deque для реализации очереди с при\
       оритетами"
         initial_state:
@@ -16,19 +16,19 @@ files:
                       priority: deque() for priority in range(self.HIGH_PRIORITY, self.LOW_PRIORITY + 1)
                   }
         selected: false
-        status: Unchecked
-      - offset: 601
-        length: 37
+        status: Solved
+      - offset: 671
+        length: 50
         placeholder_text: "...  # TODO реализовать метод enqueue"
         initial_state:
           length: 37
           offset: 601
         initialized_from_dependency: false
         encrypted_possible_answer: "self.priority_queue[priority].append(elem)"
-        selected: false
-        status: Unchecked
-      - offset: 862
-        length: 37
+        selected: true
+        status: Solved
+      - offset: 945
+        length: 173
         placeholder_text: "...  # TODO реализовать метод dequeue"
         initial_state:
           length: 37
@@ -40,10 +40,10 @@ files:
                           return queue.popleft()
           
                   raise IndexError("Извлечение из пустой очереди не возможно")
-        selected: false
-        status: Unchecked
-      - offset: 1467
-        length: 34
+        selected: true
+        status: Solved
+      - offset: 1686
+        length: 269
         placeholder_text: "...  # TODO реализовать метод peek"
         initial_state:
           length: 34
@@ -58,10 +58,10 @@ files:
                       raise IndexError("Индекс все границ очереди")
           
                   return queue[ind]
-        selected: false
-        status: Unchecked
-      - offset: 1573
-        length: 35
+        selected: true
+        status: Solved
+      - offset: 2027
+        length: 68
         placeholder_text: "...  # TODO реализовать метод clear"
         initial_state:
           length: 35
@@ -71,9 +71,9 @@ files:
           for queue in self.priority_queue.values():
                       queue.clear()
         selected: false
-        status: Unchecked
-      - offset: 1689
-        length: 37
+        status: Solved
+      - offset: 2176
+        length: 111
         placeholder_text: "...  # TODO реализовать метод __len__"
         initial_state:
           length: 37
@@ -86,7 +86,7 @@ files:
           
                   return len_
         selected: false
-        status: Unchecked
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -97,5 +97,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 18 Jun 2026 09:10:04 UTC"
 record: -1
