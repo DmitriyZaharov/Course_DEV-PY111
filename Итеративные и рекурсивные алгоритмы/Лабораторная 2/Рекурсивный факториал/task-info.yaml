@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 623
+      - offset: 523
         length: 66
         placeholder_text: "...  # TODO реализовать рекурсивный алгоритм нахождения фак\
       ториала"
@@ -13,7 +13,7 @@ files:
         initialized_from_dependency: false
         encrypted_possible_answer: '...'
         selected: false
-        status: Failed
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -28,8 +28,8 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Failed
+status: Solved
 feedback:
-  message: Error
-  time: "Thu, 18 Jun 2026 08:04:24 UTC"
+  message: Congratulations!
+  time: "Thu, 18 Jun 2026 11:24:22 UTC"
 record: -1
