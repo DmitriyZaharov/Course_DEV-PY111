@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 86
+      - offset: 830
         length: 3
         placeholder_text: '...'
         initial_state:
@@ -15,8 +15,8 @@ files:
               for idx, val in enumerate(nums):
                   if dict_.get(val) and not dict_[val] == idx:
                       return [dict_[val], idx]
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -27,5 +27,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 18 Jun 2026 09:42:11 UTC"
 record: -1

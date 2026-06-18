@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 381
-        length: 61
+      - offset: 717
+        length: 518
         placeholder_text: "...  # TODO реализовать итеративный алгоритм бинарного поис\
       ка"
         initial_state:
@@ -32,7 +32,7 @@ files:
           
               raise ValueError(f"Элемента {value} нет")
         selected: false
-        status: Unchecked
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -43,5 +43,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 18 Jun 2026 09:28:49 UTC"
 record: -1
