@@ -4,7 +4,7 @@ files:
     visible: true
     placeholders:
       - offset: 81
-        length: 3
+        length: 1707
         placeholder_text: '...'
         initial_state:
           length: 3
@@ -33,7 +33,7 @@ files:
                           r -= 1
               return result
         selected: false
-        status: Unchecked
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -44,5 +44,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 18 Jun 2026 11:03:47 UTC"
 record: -1
