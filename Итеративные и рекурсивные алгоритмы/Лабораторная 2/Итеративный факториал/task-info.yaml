@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 203
+      - offset: 874
         length: 66
         placeholder_text: "...  # TODO реализовать итеративный алгоритм нахождения фак\
       ториала"
@@ -13,7 +13,7 @@ files:
         initialized_from_dependency: false
         encrypted_possible_answer: '...'
         selected: false
-        status: Unchecked
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -28,5 +28,8 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 18 Jun 2026 08:00:23 UTC"
 record: -1
