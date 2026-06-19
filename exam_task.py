@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import List, Tuple, Counter
 import random
 
 """
@@ -109,7 +109,47 @@ def counting_rhyme(n: int, k: int) -> Tuple[List[int], int]:
     ACAA
     консенсус-строка будет ACTA (в первой ячейке чаще всего встречалась A, во второй – C, в третьей – Т, в четвертой – снова А).
     Для входного списка из N строк одинаковой длины построить консенсус-строку.
+    
+    Необходимо проанализировать каждую позицию (каждый индекс) во всех строках одновременно.
 """
+
+
+def find_dna_consensus(dna_strands: List[str]) -> str:
+    """
+    Строит консенсус-строку из списка DNA ридов одинаковой длины.
+
+    Args:
+        reads: Список строк (ридов) одинаковой длины
+
+    Returns:
+        Консенсус-строка
+
+    Временная сложность: O(N * L), где N - количество строк, L - длина строки
+    Пространственная сложность: O(L * A), где A - размер алфавита (4 для DNA)
+    """
+    # Если список пустой, возвращаем пустую строку
+    if not dna_strands:
+        return ""
+
+    # Количество строк и длина каждой строки
+    length = len(dna_strands[0])
+    consensus = []
+
+    # Идем по каждой позиции в строках
+    for i in range(length):
+        # Собираем i-й символ из каждой строки
+        column_chars = [strand[i] for strand in dna_strands]
+
+        # Подсчитываем частоту каждого символа в этой позиции
+        counts = Counter(column_chars)
+
+        # most_common(1) возвращает список вида [('C', количество)]
+        # Берем символ [0][0] из этого списка
+        most_frequent_char = counts.most_common(1)[0][0]
+
+        consensus.append(most_frequent_char)
+
+    return "".join(consensus)
 
 """
     6. Аренда ракет
@@ -244,4 +284,20 @@ if __name__ == "__main__":
     print("*" * 40)
     print(f"Порядок вылета: {eliminated_list}")
     print(f"ПОБЕДИТЕЛЬ: {game_winner}")
+    print("-" * 40)
+
+    print("Task 5:")
+    # Тест из условия
+    reads = [
+        "ATTA",
+        "ACTA",
+        "AGCA",
+        "ACAA"
+    ]
+
+    print("Исходные риды:")
+    for read in reads:
+        print(read)
+
+    print("\nКонсенсус-строка (Counter):", find_dna_consensus(reads))
     print("-" * 40)
