@@ -43,6 +43,47 @@ import random
     вылетает. Игра происходит до тех пор, пока не останется последний человек. 
     Для данных N и К дать номер последнего оставшегося человека.
 """
+def counting_rhyme(n: int, k: int) -> Tuple[List[int], int]:
+    """
+    Симуляция игры в считалочку.
+    :param n: количество человек
+    :param k: количество слогов
+    :return:
+    - список людей в порядке их вылета
+    - номер последнего выжившего
+    """
+    # Создаем круг людей с номерами от 1 до N
+    people = list(range(1, n + 1))
+    elimination_order = []
+
+    # Индекс человека, с которого начинается отсчет (0 - индексация)
+    current_index = 0
+
+    print(f"Старт игры! Начнем круг из {n} человек: {people}\n")
+
+    while len(people) > 1:
+        # Находим индекс человека, который вылетит
+        # На данный момент мы стоим на первом слоге (current_index)
+        # отсчитываем (k - 1) слогов дальше и берем остаток от текущей длины
+        current_index = (current_index + k - 1) % len(people)
+
+        # Удаляем человека из круга
+        eliminated = people.pop(current_index)
+        elimination_order.append(eliminated)
+
+        print(f"Считалка остановилась на номере {eliminated}. Он выбывает!")
+        print(f"Оставшиеся в кругу: {people}")
+
+        # Если выбывший был последним в списке, индекс автоматически сдвинется на 0
+        if current_index < len(people):
+            print(f"Следующий отсчет начнется с номера: {people[current_index]}\n")
+        else:
+            print(f"Следующий отсчет начнется с начала круга: {people[0]}\n")
+
+    # Последний оставшийся элемент в списке — победитель
+    winner = people[0]
+    return elimination_order, winner
+
 
 """
     3. Назовем связным такой граф, в котором есть путь от любой вершины к любой другой вершине.
@@ -155,6 +196,8 @@ def counting_sort_range(arr: List[int], min_val: int = 13, max_val: int = 25) ->
 
 # Пример использования
 if __name__ == "__main__":
+    print("-" * 40)
+    print("Task 7:")
     # Генерация тестового массива
     n = 10 ** 6
     arr = [random.randint(13, 25) for _ in range(n)]
@@ -167,6 +210,8 @@ if __name__ == "__main__":
     print(f"Длина: {len(sorted_arr)}")
     print(f"Минимум: {sorted_arr[0]}, Максимум: {sorted_arr[-1]}")
 
+    print("-" * 40)
+    print("Task 6:")
     # Тест 1: Все заявки последовательные - ДОЛЖНО БЫТЬ True
     requests1 = [(9, 10), (10, 11), (11, 12), (12, 13)]
     print(f"Тест 1: {can_one_rocket_suffice(requests1)}")  # True
@@ -190,3 +235,13 @@ if __name__ == "__main__":
     # Тест 6: Одна заявка
     requests6 = [(10, 12)]
     print(f"Тест 6: {can_one_rocket_suffice(requests6)}")  # True
+    print("-" * 40)
+
+    print("Task 2:")
+    # Запуск демонстрации для N = 5, K = 3
+    eliminated_list, game_winner = counting_rhyme(n=5, k=3)
+
+    print("*" * 40)
+    print(f"Порядок вылета: {eliminated_list}")
+    print(f"ПОБЕДИТЕЛЬ: {game_winner}")
+    print("-" * 40)
