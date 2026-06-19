@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 import random
 
 """
@@ -78,7 +78,43 @@ import random
     (т.е. час_начала может начинаться с Х).
     Дано: список заявок на использование ракет
     Задача: вывести ответ, хватит ли вам одной ракеты, чтобы удовлетворить все заявки на этот день
+    
+    Условие непересечения:
+    Две заявки (start1, end1) и (start2, end2) не пересекаются, если:
+    end1 <= start2 (первая заканчивается до или в момент начала второй)
+    ИЛИ 
+    end2 <= start1 (вторая заканчивается до или в момент начала первой)
 """
+
+
+def can_one_rocket_suffice(requests: List[Tuple[int, int]]) -> bool:
+    """
+    Проверяет, достаточно ли одной ракеты для всех заявок.
+
+    Args:
+        requests: Список заявок в формате (час_начала, час_конца)
+
+    Returns:
+        True, если одной ракеты достаточно, иначе False
+
+    Временная сложность: O(n log n) - из-за сортировки
+    Пространственная сложность: O(1) - если сортировать in-place
+    """
+    if len(requests) <= 1:
+        return True
+
+    # Сортируем по времени начала
+    sorted_req = sorted(requests)
+
+    for i in range(len(sorted_req) - 1):
+        start1, end1 = sorted_req[i]
+        start2, end2 = sorted_req[i + 1]
+
+        # Проверяем пересечение
+        if not (end1 <= start2):  # Если первая не заканчивается до начала второй
+            return False
+
+    return True
 
 """
     7. Сорт
@@ -130,3 +166,27 @@ if __name__ == "__main__":
     print(sorted_arr[:20])
     print(f"Длина: {len(sorted_arr)}")
     print(f"Минимум: {sorted_arr[0]}, Максимум: {sorted_arr[-1]}")
+
+    # Тест 1: Все заявки последовательные - ДОЛЖНО БЫТЬ True
+    requests1 = [(9, 10), (10, 11), (11, 12), (12, 13)]
+    print(f"Тест 1: {can_one_rocket_suffice(requests1)}")  # True
+
+    # Тест 2: Есть пересечение - ДОЛЖНО БЫТЬ False
+    requests2 = [(9, 12), (10, 11), (12, 13)]
+    print(f"Тест 2: {can_one_rocket_suffice(requests2)}")  # False
+
+    # Тест 3: Вложенные заявки - ДОЛЖНО БЫТЬ False
+    requests3 = [(9, 15), (10, 12), (12, 14)]
+    print(f"Тест 3: {can_one_rocket_suffice(requests3)}")  # False
+
+    # Тест 4: Заявки с граничным условием (конец = начало следующей) - True
+    requests4 = [(9, 11), (11, 13), (13, 15)]
+    print(f"Тест 4: {can_one_rocket_suffice(requests4)}")  # True
+
+    # Тест 5: Пустой список
+    requests5 = []
+    print(f"Тест 5: {can_one_rocket_suffice(requests5)}")  # True
+
+    # Тест 6: Одна заявка
+    requests6 = [(10, 12)]
+    print(f"Тест 6: {can_one_rocket_suffice(requests6)}")  # True
