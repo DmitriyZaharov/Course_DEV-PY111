@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 330
-        length: 56
+      - offset: 797
+        length: 57
         placeholder_text: "...  # TODO найти количество маршрутов до каждой ступени"
         initial_state:
           length: 56
@@ -28,8 +28,8 @@ files:
                   count_paths[i] = count_paths[i-1] + count_paths[i-2]
           
               return count_paths
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -44,5 +44,8 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 26 Jun 2026 07:04:06 UTC"
 record: -1
