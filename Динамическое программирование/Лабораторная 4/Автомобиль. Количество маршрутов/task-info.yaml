@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 347
-        length: 66
+      - offset: 893
+        length: 796
         placeholder_text: "...  # TODO решить задачу с помощью динамического программи\
       рования"
         initial_state:
@@ -12,8 +12,8 @@ files:
           offset: 347
         initialized_from_dependency: false
         encrypted_possible_answer: '...'
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -24,5 +24,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 26 Jun 2026 08:16:30 UTC"
 record: -1
