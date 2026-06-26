@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 78
+      - offset: 94
         length: 3
         placeholder_text: '...'
         initial_state:
@@ -21,8 +21,8 @@ files:
                   row.append(1)
                   triangle.append(row)
               return triangle
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Failed
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -37,5 +37,8 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: Error
+  time: "Fri, 26 Jun 2026 09:00:38 UTC"
 record: -1

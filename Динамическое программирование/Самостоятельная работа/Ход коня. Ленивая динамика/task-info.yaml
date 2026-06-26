@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 342
+      - offset: 1037
         length: 40
         placeholder_text: "... # TODO реализуйте подсчет ходов коня"
         initial_state:
@@ -32,8 +32,8 @@ files:
                   ])
           
               return get_steps(rows-1, cols-1)
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -48,5 +48,8 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 26 Jun 2026 08:49:01 UTC"
 record: -1
