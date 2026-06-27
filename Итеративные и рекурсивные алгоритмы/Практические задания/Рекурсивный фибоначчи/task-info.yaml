@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 547
+      - offset: 552
         length: 199
         placeholder_text: "...  # TODO реализовать рекурсивный алгоритм"
         initial_state:

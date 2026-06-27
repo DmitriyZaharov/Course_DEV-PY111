@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 799
+      - offset: 819
         length: 634
         placeholder_text: "...  # TODO реализовать алгоритм быстрой сортировки"
         initial_state:

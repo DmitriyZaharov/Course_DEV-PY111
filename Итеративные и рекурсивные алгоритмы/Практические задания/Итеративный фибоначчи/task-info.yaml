@@ -4,7 +4,7 @@ files:
     visible: true
     placeholders:
       - offset: 1
-        length: 863
+        length: 864
         placeholder_text: "...  # TODO написать итеративный алгоритм чисел Фибоначчи"
         initial_state:
           length: 57

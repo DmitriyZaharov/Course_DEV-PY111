@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 74
+      - offset: 1500
         length: 3
         placeholder_text: '...'
         initial_state:
@@ -18,8 +18,8 @@ files:
                   i += 1
               return j == len(b)
         selected: false
-        status: Unchecked
-      - offset: 129
+        status: Solved
+      - offset: 1555
         length: 3
         placeholder_text: '...'
         initial_state:
@@ -40,7 +40,7 @@ files:
                       return len(s)
               return -1
         selected: false
-        status: Unchecked
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -51,5 +51,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sat, 27 Jun 2026 07:59:21 UTC"
 record: -1

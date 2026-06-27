@@ -33,7 +33,7 @@ files:
         encrypted_possible_answer: '...'
         selected: false
         status: Solved
-      - offset: 2339
+      - offset: 2347
         length: 34
         placeholder_text: "...  # TODO реализовать метод peek"
         initial_state:
@@ -41,9 +41,9 @@ files:
           offset: 1198
         initialized_from_dependency: false
         encrypted_possible_answer: '...'
-        selected: false
+        selected: true
         status: Solved
-      - offset: 2534
+      - offset: 2542
         length: 35
         placeholder_text: "...  # TODO реализовать метод clear"
         initial_state:
@@ -53,7 +53,7 @@ files:
         encrypted_possible_answer: '...'
         selected: false
         status: Solved
-      - offset: 2775
+      - offset: 2783
         length: 37
         placeholder_text: "...  # TODO реализовать метод __len__"
         initial_state:

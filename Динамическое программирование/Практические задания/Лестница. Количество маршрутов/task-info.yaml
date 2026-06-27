@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 797
+      - offset: 806
         length: 57
         placeholder_text: "...  # TODO найти количество маршрутов до каждой ступени"
         initial_state:

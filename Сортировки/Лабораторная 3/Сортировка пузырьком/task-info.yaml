@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 1484
+      - offset: 1481
         length: 53
         placeholder_text: "...  # TODO реализовать алгоритм сортировки пузырьком"
         initial_state:

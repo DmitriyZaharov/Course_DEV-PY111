@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 1010
+      - offset: 1013
         length: 522
         placeholder_text: "...  # TODO реализовать проверку скобочной группы"
         initial_state:
@@ -11,7 +11,7 @@ files:
           offset: 280
         initialized_from_dependency: false
         encrypted_possible_answer: '...'
-        selected: false
+        selected: true
         status: Solved
     learner_created: false
   - name: tests/test_task.py

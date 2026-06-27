@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 66
-        length: 3
+      - offset: 742
+        length: 782
         placeholder_text: '...'
         initial_state:
           length: 3
@@ -29,8 +29,8 @@ files:
                           res += right_max - height[right]
                       right -= 1
               return res
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -45,5 +45,8 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sat, 27 Jun 2026 10:24:04 UTC"
 record: -1

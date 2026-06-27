@@ -1,12 +1,47 @@
 from typing import List
+"""
+Самая длинная необычная подпоследовательность (если она существует) всегда будет одной из исходных строк целиком.
+Если какая-то строка не является подпоследовательностью никакой другой строки из массива, 
+то её длина и будет потенциальным ответом.
+
+Сортировка по убыванию длины позволяет вернуть ответ сразу, как только мы найдем первую такую строку.
+"""
 
 
-def is_subsequence(a: str, b: str) -> bool:
-    ...
+def find_lus_length(strs: list[str]) -> int:
+    # 1. Функция-помощник для проверки, является ли s подпоследовательностью t
+    def is_subsequence(s: str, t: str) -> bool:
+        i, j = 0, 0
+        while i < len(s) and j < len(t):
+            if s[i] == t[j]:
+                i += 1
+            j += 1
+        return i == len(s)
 
+    # 2. Сортируем массив строк по убыванию их длины
+    strs.sort(key=len, reverse=True)
 
-def find_lus_length(strs: List[str]) -> int:
-    ...
+    # 3. Проверяем каждую строку
+    for i, current_str in enumerate(strs):
+        is_uncommon = True
 
+        for j, other_str in enumerate(strs):
+            if i == j:
+                continue
 
+            # Если текущая строка оказалась подпоследовательностью другой строки,
+            # она не может быть "необычной"
+            if is_subsequence(current_str, other_str):
+                is_uncommon = False
+                break
 
+        # Если строка не является подпоследовательностью ни одной другой строки,
+        # так как массив отсортирован по убыванию длины, это и есть самая длинная строка
+        if is_uncommon:
+            return len(current_str)
+
+    # Если все строки являются подпоследовательностями других строк
+    return -1
+
+print("Пример 1:", find_lus_length(["aba", "cdc", "eae"]))  # Выведет: 3
+print("Пример 2:", find_lus_length(["aaa", "aaa", "aa"]))  # Выведет: -1

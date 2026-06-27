@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 381
-        length: 978
+      - offset: 380
+        length: 1580
         placeholder_text: '...'
         initial_state:
           length: 3
@@ -32,5 +32,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: "Fri, 26 Jun 2026 09:04:43 UTC"
+  time: "Sat, 27 Jun 2026 07:50:23 UTC"
 record: -1

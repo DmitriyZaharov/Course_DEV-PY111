@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 45
-        length: 3
+      - offset: 330
+        length: 474
         placeholder_text: '...'
         initial_state:
           length: 3
@@ -20,8 +20,8 @@ files:
                   for j in range(1, n):
                       dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
               return dp[m - 1][n - 1]
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -36,5 +36,8 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sat, 27 Jun 2026 08:17:31 UTC"
 record: -1
